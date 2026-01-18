@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RENSTORE - Marketplace Semua Jenis Barang</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    body { background: #f4f6f8; color: #333; }
+    header { background: #111827; color: white; padding: 16px 24px; }
+    header h1 { font-size: 22px; }
+    nav { margin-top: 8px; }
+    nav a { color: #9ca3af; margin-right: 16px; text-decoration: none; font-size: 14px; }
+    nav a:hover { color: white; }
+    .container { max-width: 1100px; margin: auto; padding: 24px; }
+    .hero { background: linear-gradient(135deg, #2563eb, #1e40af); color: white; padding: 40px; border-radius: 12px; margin-bottom: 32px; text-align: center; }
+    .hero h2 { font-size: 28px; margin-bottom: 12px; }
+    .hero p { font-size: 16px; opacity: 0.9; }
+    .categories { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+    .cat-btn { background: #2563eb; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; cursor: pointer; }
+    .cat-btn:hover { background: #1e40af; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .card { background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 16px; display: flex; flex-direction: column; }
+    .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
+    .card h3 { font-size: 16px; margin-bottom: 6px; }
+    .price { color: #2563eb; font-weight: bold; margin-bottom: 12px; }
+    .wa-btn { margin-top: auto; background: #22c55e; color: white; text-align: center; text-decoration: none; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .wa-btn:hover { background: #16a34a; }
+    footer { text-align: center; padding: 24px; margin-top: 40px; font-size: 14px; color: #6b7280; }
+    input, textarea, button { font-family: inherit; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RENSTORE</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Semua Produk</a>
+    <a href="#">Kategori</a>
+    <a href="#">Jual Barang</a>
+    <a href="#">Kontak</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+    <h2>Marketplace Jual Segala Jenis Barang</h2>
+    <p>RENSTORE adalah platform jual beli online untuk semua jenis barang: elektronik, fashion, kebutuhan harian, hobi, dan lainnya.</p>
+  </section>
+
+  <section class="categories">
+    <a class="cat-btn" href="#">Elektronik</a>
+    <a class="cat-btn" href="#">Fashion</a>
+    <a class="cat-btn" href="#">Hobi & Mainan</a>
+  </section>
+
+  <section style="background:white;padding:20px;border-radius:12px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,0.06)">
+    <h2 style="margin-bottom:12px">Form Checkout WhatsApp</h2>
+    <input id="nama" placeholder="Nama Lengkap" style="width:100%;padding:10px;margin-bottom:10px" />
+    <input id="alamat" placeholder="Alamat Lengkap" style="width:100%;padding:10px;margin-bottom:10px" />
+    <textarea id="catatan" placeholder="Catatan (opsional)" style="width:100%;padding:10px;margin-bottom:10px"></textarea>
+    <button onclick="checkoutWA()" style="background:#22c55e;color:white;padding:12px;border:none;border-radius:8px;width:100%;font-size:15px">Kirim Pesanan via WhatsApp</button>
+  </section>
+
+  <h2 style="margin-bottom:16px">Produk Terbaru</h2>
+  <section class="products">
+    <!-- 10 Produk Contoh -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+1" alt="Produk 1" />
+      <h3>Produk 1</h3>
+      <div class="price">Rp100.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+1+seharga+Rp100.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+2" alt="Produk 2" />
+      <h3>Produk 2</h3>
+      <div class="price">Rp150.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+2+seharga+Rp150.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+3" alt="Produk 3" />
+      <h3>Produk 3</h3>
+      <div class="price">Rp75.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+3+seharga+Rp75.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+4" alt="Produk 4" />
+      <h3>Produk 4</h3>
+      <div class="price">Rp200.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+4+seharga+Rp200.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+5" alt="Produk 5" />
+      <h3>Produk 5</h3>
+      <div class="price">Rp50.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+5+seharga+Rp50.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+6" alt="Produk 6" />
+      <h3>Produk 6</h3>
+      <div class="price">Rp120.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+6+seharga+Rp120.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+7" alt="Produk 7" />
+      <h3>Produk 7</h3>
+      <div class="price">Rp180.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+7+seharga+Rp180.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+8" alt="Produk 8" />
+      <h3>Produk 8</h3>
+      <div class="price">Rp220.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+8+seharga+Rp220.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+9" alt="Produk 9" />
+      <h3>Produk 9</h3>
+      <div class="price">Rp90.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+9+seharga+Rp90.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x160?text=Produk+10" alt="Produk 10" />
+      <h3>Produk 10</h3>
+      <div class="price">Rp130.000</div>
+      <a class="wa-btn" href="https://wa.me/6281299225491?text=Halo,+saya+ingin+membeli+Produk+10+seharga+Rp130.000" target="_blank">Beli via WhatsApp</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2026 RENSTORE. Semua hak dilindungi.
+</footer>
+
+<script>
+  function checkoutWA() {
+    const nama = encodeURIComponent(document.getElementById('nama').value);
+    const alamat = encodeURIComponent(document.getElementById('alamat').value);
+    const catatan = encodeURIComponent(document.getElementById('catatan').value);
+    if(!nama || !alamat){
+      alert('Nama dan Alamat wajib diisi!');
+      return;
+    }
+    const waNumber = "6281299225491"; // Nomor WhatsApp
+    const message = `Halo, saya ingin membeli barang.\nNama: ${nama}\nAlamat: ${alamat}\nCatatan: ${catatan}`;
+    const url = `https://wa.me/${waNumber}?text=${message}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
